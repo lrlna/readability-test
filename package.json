@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "felsch": "main.js"
+    "flesch": "main.js"
   },
   "repository": {
     "type": "git",

@@ -25,9 +25,8 @@ FleschTest.prototype.getWords = function(string) {
         word = word.replace(specialChar);
         filteredWords.push(newWord)
       }
-    })
-  }) 
-
+    });
+  });
   return filteredWords;
 }
 
@@ -43,8 +42,8 @@ FleschTest.prototype.getSentences = function(string) {
   var sentences = [];
   endChars.forEach(function(endChar) {
     sentences.push(string.split(endChar));
-  })
+  });
   return sentences;
-
+}
 
 module.exports = FleschTest;
