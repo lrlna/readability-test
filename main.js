@@ -1,4 +1,6 @@
 #! /usr/bin/env node 
-var felsch = require("./index.js");
+var FleschTest = require("./index.js");
 
-console.log("hello");
+var flesch = new FleschTest();
+
+flesch.getWords("This cat is awesome. Show me this cat.")

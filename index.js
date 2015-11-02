@@ -1,3 +1,11 @@
+// ALL PURPOSE FUNCTIONS;
+function hasSpecialChar(word) {
+  this.specialChars.forEach(function(specialChar) {
+    return word.indexOf(specialChar) >= -1;
+  })
+}
+
+// FLESCH TEST OBJ;
 function FleschTest () {
   this.constant = 206.835;
   this.wordMultiplier = 1.015;
@@ -16,17 +24,9 @@ FleschTest.prototype.calculate = function(string) {
 // get words in an array; 
 FleschTest.prototype.getWords = function(string) {
   var words = string.split(" ");
-  var filteredWords = [];
-  
   // remove special characters from words array;
-  words.forEach(function (word) {
-    this.specialChars.forEach(function (specialChar) {
-      if( word != specialChar && word != " " ) {
-        word = word.replace(specialChar);
-        filteredWords.push(newWord)
-      }
-    });
-  });
+  var filteredWords = words.filter(hasSpecialChar, this);
+  console.log("filtered words", filteredWords);
   return filteredWords;
 }
 
