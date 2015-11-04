@@ -1,7 +1,7 @@
 // ALL PURPOSE FUNCTIONS;
 function hasSpecialChar(word) {
-  this.specialChars.forEach(function(specialChar) {
-    return word.indexOf(specialChar) >= -1;
+  return this.specialChars.filter(function(specialChar) {
+    return word.indexOf(specialChar) === -1;
   })
 }
 
@@ -17,15 +17,15 @@ function FleschTest () {
 FleschTest.prototype.calculate = function(string) {
   var words = this.getWords(string);
   var syllables = this.getSyllables(words);
-  var sentences = this.getSentences(string);
+  var sentences = this.getSentences(string);  
   return this.constant - this.wordMultiplier * (words / sentences) - this.syllableMultiplier * (syllables / words);
 }
 
 // get words in an array; 
 FleschTest.prototype.getWords = function(string) {
-  var words = string.split(" ");
+  var words = string.split(" "); 
   // remove special characters from words array;
-  var filteredWords = words.filter(hasSpecialChar, this);
+  var filteredWords = words.filter(hasSpecialChar, this)
   console.log("filtered words", filteredWords);
   return filteredWords;
 }
